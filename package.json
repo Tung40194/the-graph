@@ -13,6 +13,8 @@
   "author": "tungpham",
   "license": "ISC",
   "dependencies": {
-    "@graphprotocol/graph-cli": "^0.29.0"
+    "@graphprotocol/graph-cli": "^0.29.0",
+    "@openzeppelin/subgraphs": "^0.1.7-1",
+    "mustache": "^4.2.0"
   }
 }
