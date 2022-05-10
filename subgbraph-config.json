@@ -2,6 +2,7 @@
   "output": "can/",
   "chain": "matic",
   "datasources": [
-    { "address": "0xf6d4aB1c90Cd1E3Fc17ff4A250990A430B5FEEA4", "startBlock": 27074326, "module": [ "erc721" ] }
+    { "address": "0xf6d4aB1c90Cd1E3Fc17ff4A250990A430B5FEEA4", "startBlock": 27074326, "module": [ "erc721" ] },
+    { "address": "0x07a3e76e51f5001DC9F82C43cd54cf5731b9F0EB", "startBlock": 28138843, "module": [ "erc721" ] }
   ]
 }

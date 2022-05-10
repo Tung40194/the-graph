@@ -9,8 +9,11 @@
 The Graph
 1) init subgraph
     graph init --product hosted-service --from-contract <Address>
-        + subgraph name: canfoundation/can
-        + folder: can
+        Input example:
+            + subgraph name: canfoundation/can (created via The Graph hosted service first)
+            + folder: can
+
+
 
 Openzeppelin-subgraph Generator
 2) Modify subgbraph-config.json with your contract address and modules it supports
