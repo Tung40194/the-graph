@@ -8,6 +8,7 @@
 
 The Graph
 1) init subgraph
+
     graph init --product hosted-service --from-contract <Address>
         Input example:
             + subgraph name: canfoundation/can (created via The Graph hosted service first)
@@ -16,6 +17,7 @@ The Graph
 
 
 Openzeppelin-subgraph Generator
+
 2) Modify subgbraph-config.json with your contract address and modules it supports
 
 3) subgraph-config.json by default redirect generated files to overwrite ones in `can/` folder. Check subgraph-config.json and change `can/` to the name of the folder you input in 1) (or what ever folder contains `schema.graphql` and `subgraph.yaml` files)
