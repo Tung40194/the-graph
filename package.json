@@ -4,7 +4,8 @@
   "description": "to manage subgraph-deployment",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gen-graph-manifest": "npx graph-compiler --config subgbraph-config.json --include node_modules/@openzeppelin/subgraphs/src/datasources --export-schema --export-subgraph"
   },
   "repository": {
     "type": "git",
