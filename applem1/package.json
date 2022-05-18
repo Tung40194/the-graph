@@ -1,0 +1,16 @@
+{
+  "name": "applem1",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ tung40194/applem1",
+    "create-local": "graph create --node http://localhost:8020/ tung40194/applem1",
+    "remove-local": "graph remove --node http://localhost:8020/ tung40194/applem1",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 tung40194/applem1"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.29.2",
+    "@graphprotocol/graph-ts": "0.26.0"
+  }
+}
