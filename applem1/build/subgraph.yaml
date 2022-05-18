@@ -14,7 +14,7 @@ dataSources:
       apiVersion: 0.0.5
       language: wasm/assemblyscript
       entities:
-        - createContract
+        - contractDeployment
       abis:
         - name: manOfBinary
           file: manOfBinary/abis/manOfBinary.json

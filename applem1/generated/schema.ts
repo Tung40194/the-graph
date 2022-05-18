@@ -12,9 +12,9 @@ import {
 } from "@graphprotocol/graph-ts";
 
 export class contractDeployment extends Entity {
-  constructor(id: string) {
+  constructor(id: Bytes) {
     super();
-    this.set("id", Value.fromString(id));
+    this.set("id", Value.fromBytes(id));
   }
 
   save(): void {
@@ -22,26 +22,26 @@ export class contractDeployment extends Entity {
     assert(id != null, "Cannot save contractDeployment entity without an ID");
     if (id) {
       assert(
-        id.kind == ValueKind.STRING,
-        `Entities of type contractDeployment must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        id.kind == ValueKind.BYTES,
+        `Entities of type contractDeployment must have an ID of type Bytes but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set("contractDeployment", id.toString(), this);
+      store.set("contractDeployment", id.toBytes().toHexString(), this);
     }
   }
 
-  static load(id: string): contractDeployment | null {
+  static load(id: Bytes): contractDeployment | null {
     return changetype<contractDeployment | null>(
-      store.get("contractDeployment", id)
+      store.get("contractDeployment", id.toHexString())
     );
   }
 
-  get id(): string {
+  get id(): Bytes {
     let value = this.get("id");
-    return value!.toString();
+    return value!.toBytes();
   }
 
-  set id(value: string) {
-    this.set("id", Value.fromString(value));
+  set id(value: Bytes) {
+    this.set("id", Value.fromBytes(value));
   }
 
   get count(): BigInt {

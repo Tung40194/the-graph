@@ -6,12 +6,12 @@ import {
 import { contractDeployment } from "../generated/schema"
 
 export function handlecreateContract(event: createContract): void {
-  let entity = contractDeployment.load(event.transaction.from.toHex())
+  let entity = contractDeployment.load(event.address)
 
   // Entities only exist after they have been saved to the store;
   // `null` checks allow to create entities on demand
   if (!entity) {
-    entity = new contractDeployment(event.transaction.from.toHex())
+    entity = new contractDeployment(event.address)
 
     // Entity fields can be set using simple assignments
     entity.count = BigInt.fromI32(0)
