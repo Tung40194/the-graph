@@ -14,86 +14,16 @@ dataSources:
       apiVersion: 0.0.5
       language: wasm/assemblyscript
       entities:
-        - contractDeployment
+        - createContract
       abis:
         - name: manOfBinary
           file: manOfBinary/abis/manOfBinary.json
+        - name: IERC721
+          file: node_modules/@openzeppelin/contracts/build/contracts/IERC721Metadata.json
       eventHandlers:
         - event: createContract(string,string)
           handler: handlecreateContract
       file: manOfBinary/manOfBinary.wasm
-  - kind: ethereum/contract
-    name: erc721
-    network: mumbai
-    source:
-      address: "0xf6d4aB1c90Cd1E3Fc17ff4A250990A430B5FEEA4"
-      abi: IERC721
-      startBlock: 27074326
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.5
-      language: wasm/assemblyscript
-      entities:
-        - ERC721Contract
-      abis:
-        - name: IERC721
-          file: node_modules/@openzeppelin/contracts/build/contracts/IERC721Metadata.json
-      eventHandlers:
-        - event: Approval(indexed address,indexed address,indexed uint256)
-          handler: handleApproval
-        - event: ApprovalForAll(indexed address,indexed address,bool)
-          handler: handleApprovalForAll
-        - event: Transfer(indexed address,indexed address,indexed uint256)
-          handler: handleTransfer
-      file: erc721/erc721.wasm
-  - kind: ethereum/contract
-    name: erc721-1
-    network: mumbai
-    source:
-      address: "0x07a3e76e51f5001DC9F82C43cd54cf5731b9F0EB"
-      abi: IERC721
-      startBlock: 28138843
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.5
-      language: wasm/assemblyscript
-      entities:
-        - ERC721Contract
-      abis:
-        - name: IERC721
-          file: node_modules/@openzeppelin/contracts/build/contracts/IERC721Metadata.json
-      eventHandlers:
-        - event: Approval(indexed address,indexed address,indexed uint256)
-          handler: handleApproval
-        - event: ApprovalForAll(indexed address,indexed address,bool)
-          handler: handleApprovalForAll
-        - event: Transfer(indexed address,indexed address,indexed uint256)
-          handler: handleTransfer
-      file: erc721/erc721.wasm
-  - kind: ethereum/contract
-    name: erc721-2
-    network: mumbai
-    source:
-      address: "0x0Bf91Ed70e8176D9aDCA96D32dEd6c78388a4A41"
-      abi: IERC721
-      startBlock: 28251282
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.5
-      language: wasm/assemblyscript
-      entities:
-        - ERC721Contract
-      abis:
-        - name: IERC721
-          file: node_modules/@openzeppelin/contracts/build/contracts/IERC721Metadata.json
-      eventHandlers:
-        - event: Approval(indexed address,indexed address,indexed uint256)
-          handler: handleApproval
-        - event: ApprovalForAll(indexed address,indexed address,bool)
-          handler: handleApprovalForAll
-        - event: Transfer(indexed address,indexed address,indexed uint256)
-          handler: handleTransfer
-      file: erc721/erc721.wasm
   - kind: ethereum/contract
     name: erc721-3
     network: mumbai
@@ -117,4 +47,4 @@ dataSources:
           handler: handleApprovalForAll
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer
-      file: erc721/erc721.wasm
+      file: erc721-3/erc721-3.wasm
