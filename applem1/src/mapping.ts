@@ -42,7 +42,7 @@ import {
 export function handlecreateContract(event: createContract): void {
 	let erc721           = IERC721.bind(event.address)
 
-  let account          = new Account(event.address.toHex())
+  	let account          = new Account(event.address.toHex())
 	account.save()
 
 	let detectionId      = account.id.concat('/erc721detection')
